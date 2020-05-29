@@ -1,7 +1,7 @@
-// You are given an array of n integers. You have to equalize all elements of 
+// You are given an array of n integers. You have to equalize all elements of
 // the array in minimum possible operation.
 
-// In ONE operation, you can increase any of the n-1 elements of the array by 1. 
+// In ONE operation, you can increase any of the n-1 elements of the array by 1.
 // That is, except for one element of the array, you can increment all other integers by 1.
 
 // Output the minimum number of operations required to equalize all elements of array.
@@ -18,7 +18,7 @@
 
 // Output Format
 
-// Output one number, which is the minimum number of operations required to perform in 
+// Output one number, which is the minimum number of operations required to perform in
 // order to make all the elements of array equal
 
 // Sample Input 0
@@ -36,30 +36,30 @@
 
 // Therefore, at least 3 operations are required atleast
 
-
 function processData(input) {
-    //Enter your code here
-    var smallest = 999999, countOfOperations = 0, sumOfArray = 0;
-    
-    input = input.split('\n');
-    // console.log('input', input);
-    
-    var numberOfElements = Number(input[0]);
-    // console.log('numberOfElements', numberOfElements);
-    
-    var elements = input[1].split(' ').map(Number);
-    // console.log('elements', elements);
+  //Enter your code here
+  var smallest = 999999,
+    countOfOperations = 0,
+    sumOfArray = 0;
 
-    for ( var i = 0; i < numberOfElements; i++ ) {
-        if ( smallest > elements[ i ] ) {
-            smallest = elements[ i ];
-        }
-        
-    sumOfArray = sumOfArray + elements[i];
+  input = input.split("\n");
+  // console.log('input', input);
 
-    countOfOperations = sumOfArray - numberOfElements * smallest
-    
+  var numberOfElements = Number(input[0]);
+  // console.log('numberOfElements', numberOfElements);
+
+  var elements = input[1].split(" ").map(Number);
+  // console.log('elements', elements);
+
+  for (var i = 0; i < numberOfElements; i++) {
+    if (smallest > elements[i]) {
+      smallest = elements[i];
     }
-    
-        console.log(countOfOperations );
-} 
+
+    sumOfArray = sumOfArray + elements[i];
+  }
+
+  countOfOperations = sumOfArray - numberOfElements * smallest;
+
+  console.log(countOfOperations);
+}
