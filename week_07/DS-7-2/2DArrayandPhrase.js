@@ -63,9 +63,10 @@ function processData(input) {
           count = count + 1;
         }
         }
-//         For Diagonal Up
+
+        //         For Diagonal Down
         if ( columns - j >= phraseLength && rows - i >= phraseLength ) {
-            // console.log('DIAG UP', i, j);
+            console.log('DIAG DOWN', i, j);
             if (
           matrix[i][j] === "s" && matrix[i + 1][j + 1] === "a" && matrix[i + 2][j + 2] === "b" && matrix[i + 3][j + 3] === "a"
         ) {
@@ -74,10 +75,10 @@ function processData(input) {
             
         }
         
-//         For Diagonal Down
+
+//         For Diagonal Up
         if ( columns- j >= phraseLength && i >= phraseLength- 1 ) {
-            console.log('DIAG DOWN', i, j);
-            
+             // console.log('DIAG UP', i, j);
              if (
           matrix[i][j] === "s" && matrix[i - 1][j + 1] === "a" && matrix[i - 2][j + 2] === "b" && matrix[i - 3][j + 3] === "a"
         ) {
