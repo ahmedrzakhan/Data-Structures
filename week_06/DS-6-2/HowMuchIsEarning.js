@@ -104,3 +104,49 @@ var calculateEarnings = function( numberOfElements, amount, arr ) {
 }
 
 
+// 2nd Approach
+
+function processData(input) {
+    //Enter your code here
+    input = input.split('\n');
+    // console.log('input', input);
+
+    var numberOfTestCases = Number(input[0]);
+    // console.log('numberOfTestCases', numberOfTestCases);
+    
+    var line = 1;
+
+    
+    for ( var i = 0; i < numberOfTestCases; i++ ) {
+        var [ numberOfBuilding, amount ] = input[line].split(' ').map(Number);
+        // console.log("numberOfBuilding, amount", numberOfBuilding, amount);
+
+        line = line + 1;
+        
+        var givenArray = input[line].split(' ').map(Number);
+        // console.log("givenArray", givenArray);
+        line = line + 1;
+        var output = countEarning(givenArray, numberOfBuilding, amount); 
+        console.log(output);
+    }
+} 
+
+var countEarning = function(givenArray, numberOfBuilding, amount) {
+    var count = 0;
+    var currentBuilding = 0;
+    
+    for ( var i = 0; i < numberOfBuilding; i++) {
+        
+        if ( givenArray[i] > currentBuilding ) {
+            
+            currentBuilding = givenArray[i];
+            count = count + 1;
+        }
+    }
+    
+    // console.log("count", count * amount);
+    // console.log(givenArray);
+    return count * amount;
+    
+}
+
