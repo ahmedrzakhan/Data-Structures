@@ -99,3 +99,33 @@ function kangaroo(x1, v1, x2, v2) {
     }
 
 }
+
+
+// Another Approach
+
+function kangaroo(x1, v1, x2, v2) {
+    
+    for ( var i = 0; i < 10000; i ++ ) {
+
+        if ( x1 + i * v1 === x2 + i * v2 ) {
+            
+            return "YES";
+        } 
+    }
+
+    return "NO";       
+}
+
+// Optimized Approach
+
+function kangaroo(x1, v1, x2, v2) {
+    
+    if ( v1 < v2 || ( (x2 - x1) % (v2 - v1) !== 0 ) ) {
+        
+        return "NO" 
+    } else {
+        
+        return "YES"
+        
+    }
+}
