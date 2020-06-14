@@ -31,62 +31,46 @@
 
 // So, the output is 4 since 1 is odd.
 
-
 function processData(input) {
-    
-    var answer = 0, i = 0;
-    //Enter your code here
-    string1 = input.split('\n');
-    
-    numberOfElements = Number(string1[0]);
-    // console.log(numberOfElements);
-    
-    individualElements = string1[1].split(' ');
-    // console.log('individualElements', individualElements);
-    
-    // console.log('Number(individualElements[0]', Number(individualElements[0]));
-    // console.log('typeof Number(individualElements[0])', typeof Number(individualElements[0]));
-    
-    lengthOfIndividualElements = Number(individualElements.length);
-    // console.log('lengthOfIndividualElements', lengthOfIndividualElements)
-    // console.log('typeof lengthOfIndividualElements', typeof lengthOfIndividualElements)
-    
-    while ( i < lengthOfIndividualElements ) {
-        current = individualElements[i]
-        // console.log('current', current);
-        cnt = 0;
-        
-        if ( current % 2 === 1) {
-            // console.log('current odd', current);
-            cnt += 1;
-            j = i + 1;
-            
-            while ( j < lengthOfIndividualElements ) {
-                if ( individualElements[j] === current) {
-                    cnt += 1;
-                    j += 1;
-                    // console.log('cnt', cnt);
-                } else {
-                    answer = Math.max( answer, cnt );
-                    i = j;
-                    break;
-                    // answer = Math.max( answer, cnt );
-                    // i += 1;
-                }
-                answer = Math.max( answer, cnt );
-                     // i += 1;
-            }
+  var answer = 0,
+    i = 0;
+  //Enter your code here
+  string1 = input.split("\n");
 
-            
+  numberOfElements = Number(string1[0]);
+
+  individualElements = string1[1].split(" ");
+
+  lengthOfIndividualElements = Number(individualElements.length);
+
+  while (i < lengthOfIndividualElements) {
+    current = individualElements[i];
+    // console.log('current', current);
+    var cnt = 0;
+
+    if (current % 2 === 1) {
+      // console.log('current odd', current);
+      cnt += 1;
+      var j = i + 1;
+
+      while (j < lengthOfIndividualElements) {
+        if (individualElements[j] === current) {
+          cnt += 1;
+          j += 1;
+          // console.log('cnt', cnt);
+        } else {
+          answer = Math.max(answer, cnt);
+          i = j;
+          break;
         }
-        // answer = Math.max( answer, cnt );
-
-        i++;
+        answer = Math.max(answer, cnt);
+      }
     }
-    
-    
-    console.log( answer )
-       
+
+    i++;
+  }
+
+  console.log(answer);
 }
 
-processData('12\n1 1 1 1 2 2 2 2 2 1 1 1');
+processData("6\n1 2 3 4 5 6");
