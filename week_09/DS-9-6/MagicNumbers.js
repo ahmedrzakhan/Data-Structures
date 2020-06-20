@@ -46,9 +46,12 @@ function processData(input) {
   var magic = true;
 
   if (input % 4 == 0 || input % 7 == 0) {
+    
     magic = true;
   } else if (true) {
+
     for (var i = 0; i < input.length; i++) {
+
       if (input[i] != 4 && input[i] != 7) {
         magic = false;
         break;
