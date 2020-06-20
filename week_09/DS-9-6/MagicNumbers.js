@@ -46,7 +46,7 @@ function processData(input) {
   var magic = true;
 
   if (input % 4 == 0 || input % 7 == 0) {
-    
+
     magic = true;
   } else if (true) {
 
@@ -57,8 +57,6 @@ function processData(input) {
         break;
       }
     }
-  } else {
-    magic = false;
   }
 
   if (magic) {
