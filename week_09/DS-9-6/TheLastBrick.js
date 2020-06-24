@@ -67,3 +67,28 @@ function processData(input) {
 
   console.log(person);
 }
+
+// -------------------------- 2nd Approach --------------------------------
+function processData(input) {
+  //Enter your code here
+
+  var i = 1;
+  var bricks = Number(input);
+
+  while (bricks > 0) {
+    //         Patlu Turn
+    bricks = bricks - i;
+    if (bricks <= 0) {
+      console.log("Patlu");
+      break;
+    }
+
+    //         Motu Turn
+    bricks = bricks - 2 * i;
+    if (bricks <= 0) {
+      console.log("Motu");
+      break;
+    }
+    i++;
+  }
+}
