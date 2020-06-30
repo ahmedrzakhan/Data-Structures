@@ -68,8 +68,6 @@ function processData(input) {
   var numberOfOperations = Number(input[0]);
   // console.log("numberOfOperations", numberOfOperations );
 
-  var oneVal = 1;
-
   var stack = [];
 
   for (var i = 1; i < input.length; i++) {
