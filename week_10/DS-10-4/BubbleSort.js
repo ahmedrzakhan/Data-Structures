@@ -1,22 +1,51 @@
 function processData(input) {
-  //Enter your code here
-  input = input.split("\n");
+    //Enter your code here
+    input = input.split("\n");
 
-  var numberOfElements = Number(input[0]);
-  var givenArray = input[1].split(" ").map(Number);
+    var numberOfElements = Number(input[0]);
+    var givenArray = input[1].split(" ").map(Number);
 
-  // console.log( numberOfElements, givenArray );
+    // console.log( numberOfElements, givenArray );
 
-  for (var i = 0; i < numberOfElements - 1; i++) {
-    for (var j = 0; j < numberOfElements - i - 1; j++) {
-      if (givenArray[j] > givenArray[j + 1]) {
-        var temp = givenArray[j];
-        givenArray[j] = givenArray[j + 1];
-        givenArray[j + 1] = temp;
-      }
+    for (var i = 0; i < numberOfElements - 1; i++) {
+        for (var j = 0; j < numberOfElements - i - 1; j++) {
+            if (givenArray[j] > givenArray[j + 1]) {
+                var temp = givenArray[j];
+                givenArray[j] = givenArray[j + 1];
+                givenArray[j + 1] = temp;
+            }
+        }
     }
-  }
 
-  console.log(givenArray.join(" "));
+    console.log(givenArray.join(" "));
 }
 processData("5\n3 5 0 9 8");
+
+
+// Splitting Function
+
+function processData(input) {
+    //Enter your code here
+    input = input.split("\n");
+
+    var numberOfElements = Number(input[0]);
+    var givenArray = input[1].split(" ").map(Number);
+
+    // console.log( numberOfElements, givenArray );
+
+    for (var i = 0; i < numberOfElements - 1; i++) {
+        for (var j = 0; j < numberOfElements - i - 1; j++) {
+            if (givenArray[j] > givenArray[j + 1]) {
+                swap(givenArray, j, j + 1);
+            }
+        }
+    }
+
+    console.log(givenArray.join(" "));
+}
+
+var swap = function(givenArray, i, j) {
+    var temp = givenArray[i];
+    givenArray[i] = givenArray[j];
+    givenArray[j] = temp;
+}
