@@ -53,12 +53,13 @@ function processData(input) {
         if (stack.length === 0) {
 
             result = result + "-1" + " ";
-            stack.push(givenArray[i]);
+            // stack.push(givenArray[i]);
         } else {
 
             result = result + stack[stack.length - 1] + " ";
-            stack.push(givenArray[i]);
+            // stack.push(givenArray[i]);
         }
+        stack.push(givenArray[i]);
     }
     console.log(result);
 }
