@@ -37,5 +37,23 @@ function processData(input) {
         
     }
     console.log(ans);
-    
 } 
+
+// Using Recursion
+function processData(input) {
+    //Enter your code here
+    let n = Number(input);
+  
+    let f = factorial(n);
+    console.log(f);
+  }
+  
+  let factorial = function (n) {
+    if (n === 0) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  };
+  
+  processData("5");
