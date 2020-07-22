@@ -64,3 +64,14 @@ var transpose = function(matrix, numberOfRows, numberOfColumns ) {
 }
 
 processData('5 4\n0 0 0 0\n1 1 1 1\n2 2 2 2\n3 3 3 3\n4 4 4 4')
+
+
+// Create 2D Array
+
+input = input.split('\n');
+let [row, col] = input[0].split(' ').map(Number);
+console.log(row, col);
+input.shift();
+console.log("input", input);
+let mat = input.map(item => item.split(' ').map(Number));
+console.log(mat);
