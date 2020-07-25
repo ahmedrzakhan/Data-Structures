@@ -49,3 +49,30 @@ function processData(input) {
     console.log(row);
   }
 }
+
+// Minimize Space Complexity
+
+function processData(input) {
+  //Enter your code here
+  input = input.split("\n");
+  // console.log("input", input);
+
+  let n = Number(input[0]);
+  input.shift();
+
+  let matrix = input.map((a) => a.split(" "));
+  // console.log("matrix", matrix);
+
+  for (let i = 0; i < Math.floor(n / 2); i++) {
+    for (let j = i; j < n - i - 1; j++) {
+      // console.log("i, j", i, j);
+      let temp = matrix[i][j];
+      matrix[i][j] = matrix[j][n - i - 1];
+      matrix[j][n - i - 1] = matrix[n - i - 1][n - j - 1];
+      matrix[n - i - 1][n - j - 1] = matrix[n - j - 1][i];
+      matrix[n - j - 1][i] = temp;
+    }
+  }
+
+  console.log(matrix.map((a) => a.join(" ")).join("\n"));
+}
