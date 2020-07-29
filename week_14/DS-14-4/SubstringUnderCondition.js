@@ -62,3 +62,29 @@ const checkCondition = (arr, i, c) => {
     return checkCondition(arr, i + 1, c);
   }
 };
+
+// 2nd Approach
+
+function processData(input) {
+  //Enter your code here
+  let str = input;
+
+  let n = str.length;
+
+  let result = getCount(str, n - 1);
+  console.log(result);
+}
+
+const getCount = (s, n) => {
+  if (n < 0) {
+    return 0;
+  } else {
+    let count = 0;
+    for (let i = 0; i <= n; i++) {
+      if (s[i] === s[n]) {
+        count++;
+      }
+    }
+    return count + getCount(s, n - 1);
+  }
+};
