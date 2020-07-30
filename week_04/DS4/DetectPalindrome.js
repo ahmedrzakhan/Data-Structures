@@ -28,48 +28,47 @@
 // Usng String Method
 
 function processData(input) {
-    //Enter your code here
-    var isPalindrome;
-    // console.log('input', input);
-    // console.log('typeof input', typeof input);
-    
-    for ( var i = 0; i < input.length / 2; i++ ) {
-        if ( input[i] === input[input.length - i - 1]) {
-            isPalindrome = true;
-        } else {
-            isPalindrome = false;
-            break;
-        }
-    }
-    
-    if ( isPalindrome ) {
-        console.log("Yes");
-    } else {
-        console.log("No"); 
-    }
-} 
+  //Enter your code here
+  var isPalindrome;
+  // console.log('input', input);
+  // console.log('typeof input', typeof input);
 
+  for (var i = 0; i < input.length / 2; i++) {
+    if (input[i] === input[input.length - i - 1]) {
+      isPalindrome = true;
+    } else {
+      isPalindrome = false;
+      break;
+    }
+  }
+
+  if (isPalindrome) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
+}
 
 // Usng Number Method
 
 function processData(input) {
-    //Enter your code here
-    input = Number(input);
-    
-    n = input;
-    reverse = 0;
+  //Enter your code here
+  input = Number(input);
 
-    while ( n > 0 ) {
-        remainder = n % 10;
-        reverse = reverse * 10 + remainder;
-        n = Math.floor(n / 10); 
-    }
-    
-    // console.log('reverse', reverse);
-    
-    if ( reverse === input ) {
-        console.log('Yes');
-    } else {
-        console.log('No');
-    }
-} 
+  n = input;
+  reverse = 0;
+
+  while (n > 0) {
+    remainder = n % 10;
+    reverse = reverse * 10 + remainder;
+    n = Math.floor(n / 10);
+  }
+
+  // console.log('reverse', reverse);
+
+  if (reverse === input) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
+}

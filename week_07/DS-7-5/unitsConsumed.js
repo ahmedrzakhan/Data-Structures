@@ -2,7 +2,7 @@
 // Submissions
 // Leaderboard
 // Discussions
-// Electricity consumption is measured via slab rates for a particular wattage capacity, 
+// Electricity consumption is measured via slab rates for a particular wattage capacity,
 // which is as follows
 
 // unitsConsumed pricePerUnit
@@ -34,21 +34,20 @@
 
 // 170
 
-
 function processData(input) {
-    //Enter your code here
-    bill = input;
-    bill = bill - 80;
-    // console.log(bill);
-    
-    var unitsConsumed;
-    if ( bill <= 150 ) {
-         unitsConsumed = bill / 3;
-    } else if ( bill > 150 && bill <= 650 ) {
-         unitsConsumed = 50 + ( ( bill - 150 ) / 5 );
-    } else {
-         unitsConsumed = 50 + 100 + ( ( bill - 650 ) / 10 );
-    }
-    
-    console.log(unitsConsumed);
-} 
+  //Enter your code here
+  bill = input;
+  bill = bill - 80;
+  // console.log(bill);
+
+  var unitsConsumed;
+  if (bill <= 150) {
+    unitsConsumed = bill / 3;
+  } else if (bill > 150 && bill <= 650) {
+    unitsConsumed = 50 + (bill - 150) / 5;
+  } else {
+    unitsConsumed = 50 + 100 + (bill - 650) / 10;
+  }
+
+  console.log(unitsConsumed);
+}

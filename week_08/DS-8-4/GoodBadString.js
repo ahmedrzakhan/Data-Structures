@@ -1,7 +1,7 @@
 // We do not like strings which have same consecutive letters. No one has any idea why it is so.
 
-// We call these strings as Bad strings. So, Good strings are the strings which do not have 
-// same consecutive letters. Now, the problem is simple. Given a string S, you need to 
+// We call these strings as Bad strings. So, Good strings are the strings which do not have
+// same consecutive letters. Now, the problem is simple. Given a string S, you need to
 // convert it into a Good String.
 
 // Input Format
@@ -44,35 +44,32 @@
 // In the third case, S = "ababa" and S has no same consecutive letter. So, the good string
 //  will be "ababa".
 
-
 function processData(input) {
-    //Enter your code here
-    input = input.split('\n');
-    
-    var numberOfTestCases = Number(input[0]);
-    // console.log("numberOfTestCases", numberOfTestCases);
-    
-    input.shift();
-    
-    // console.log("input", input);
-    
-    for ( var i = 0; i < input.length; i++ ) {
-        var str = input[i];
-        
-            var result = "";
-        
-        for ( var j = 0; j < str.length; j++ ) {
-            
-            if ( str[j] === str[j + 1] ) {
-                result = result + ""
-                // console.log("str[j]", str[j]);
-            } else {
-                result = result + str[j];
-            }
-        }
-        console.log(result);
-        
-    }    
-}  
+  //Enter your code here
+  input = input.split("\n");
 
-processData('3\nabb\naaab\nababa')
+  var numberOfTestCases = Number(input[0]);
+  // console.log("numberOfTestCases", numberOfTestCases);
+
+  input.shift();
+
+  // console.log("input", input);
+
+  for (var i = 0; i < input.length; i++) {
+    var str = input[i];
+
+    var result = "";
+
+    for (var j = 0; j < str.length; j++) {
+      if (str[j] === str[j + 1]) {
+        result = result + "";
+        // console.log("str[j]", str[j]);
+      } else {
+        result = result + str[j];
+      }
+    }
+    console.log(result);
+  }
+}
+
+processData("3\nabb\naaab\nababa");

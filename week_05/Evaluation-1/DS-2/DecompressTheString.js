@@ -1,7 +1,7 @@
-// Given a string of lowercase characters and integers, decompress the string under 
+// Given a string of lowercase characters and integers, decompress the string under
 // following rules:
 
-// If an integer is encounterd, the character just before it gets added to a final 
+// If an integer is encounterd, the character just before it gets added to a final
 // string as many times as the number
 // For instance, if the string is "a3b2" => the output should be "aaabb" because a
 //  is followed by 3, and b is followed by 2

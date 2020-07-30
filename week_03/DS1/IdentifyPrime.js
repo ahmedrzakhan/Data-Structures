@@ -25,40 +25,38 @@
 // Since 13 is a prime number, the output is Yes
 
 function processData(input) {
-    
-    var count = 0
-    //Enter your code here
-    // console.log('input', input)
-                
-    for ( index = 1; index <= input; index++) {
-        if ( input % index === 0) {
-            count += 1;
-        }
-    }
-    
-    if ( count > 2) {
-        console.log('No')
-    } else {
-        console.log('Yes')
-    }
+  var count = 0;
+  //Enter your code here
+  // console.log('input', input)
 
+  for (index = 1; index <= input; index++) {
+    if (input % index === 0) {
+      count += 1;
+    }
+  }
+
+  if (count > 2) {
+    console.log("No");
+  } else {
+    console.log("Yes");
+  }
 }
 
 // 2nd Approach
 
 function processData(input) {
-    isPrime = true;
-    //Enter your code here
-    for ( index = 2; index <= Math.sqrt(input); index++) {
-        if ( input % index === 0) {
-            isPrime = false;
-            break;
-        }
+  isPrime = true;
+  //Enter your code here
+  for (index = 2; index <= Math.sqrt(input); index++) {
+    if (input % index === 0) {
+      isPrime = false;
+      break;
     }
-    
-    if (isPrime) {
-        console.log('Yes');
-    } else {
-        console.log('No')
-    }
-} 
+  }
+
+  if (isPrime) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
+}

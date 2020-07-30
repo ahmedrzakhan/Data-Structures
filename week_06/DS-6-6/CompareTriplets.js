@@ -1,4 +1,4 @@
-// Alice and Bob each created one problem for HackerRank. A reviewer rates the two 
+// Alice and Bob each created one problem for HackerRank. A reviewer rates the two
 // challenges, awarding points on a scale from  to  for three categories: problem clarity,
 //  originality, and difficulty.
 
@@ -14,8 +14,8 @@
 
 // Given  and , determine their respective comparison points.
 
-// For example,  and . For elements , Bob is awarded a point because . For the equal elements  
-// and , no points are earned. Finally, for elements ,  so Alice receives a point. Your return 
+// For example,  and . For elements , Bob is awarded a point because . For the equal elements
+// and , no points are earned. Finally, for elements ,  so Alice receives a point. Your return
 // array would be  with Alice's score first and Bob's second.
 
 // Function Description
@@ -29,16 +29,16 @@
 // b: an array of integers representing Bob's challenge rating
 // Input Format
 
-// The first line contains  space-separated integers, , , and , describing the respective 
+// The first line contains  space-separated integers, , , and , describing the respective
 // values in triplet .
-// The second line contains  space-separated integers, , , and , describing the respective 
+// The second line contains  space-separated integers, , , and , describing the respective
 // values in triplet .
 
 // Constraints
 
 // Output Format
 
-// Return an array of two integers denoting the respective comparison points earned by Alice 
+// Return an array of two integers denoting the respective comparison points earned by Alice
 // and Bob.
 
 // Sample Input 0
@@ -72,22 +72,20 @@
 // Comparing the  and  elements,  and  so Alice receives two points.
 // The return array is .
 
-
 function compareTriplets(a, b) {
-    var aliceScore = 0, bobScore = 0 
-    for ( var i = 0; i < 3; i++ ) {
-        if ( a[ i ] > b[ i ]) {
-            aliceScore = aliceScore + 1;
-        } else if ( a[ i ] < b[ i ]){
-            bobScore = bobScore + 1;
-        } else {
-            aliceScore = aliceScore;
-            bobScore = bobScore;
-        }
+  var aliceScore = 0,
+    bobScore = 0;
+  for (var i = 0; i < 3; i++) {
+    if (a[i] > b[i]) {
+      aliceScore = aliceScore + 1;
+    } else if (a[i] < b[i]) {
+      bobScore = bobScore + 1;
+    } else {
+      aliceScore = aliceScore;
+      bobScore = bobScore;
     }
-    
-    console.log(aliceScore, bobScore)
-    return [aliceScore, bobScore];
-    
+  }
 
+  console.log(aliceScore, bobScore);
+  return [aliceScore, bobScore];
 }

@@ -1,8 +1,8 @@
-// There is a long queue of people in front of ATMs. Due to withdrawal limit 
+// There is a long queue of people in front of ATMs. Due to withdrawal limit
 // per person per day, people come in groups to withdraw money.
 
-// Groups come one by one and line up behind the already present queue. The 
-// groups have a strange way of arranging themselves. In a particular group, 
+// Groups come one by one and line up behind the already present queue. The
+// groups have a strange way of arranging themselves. In a particular group,
 // the group members arrange themselves in increasing order of their height(not
 //      necessarily strictly increasing). Effectively, all people who have lined
 //       up in increasing order of height form one group
@@ -33,24 +33,21 @@
 // 2
 
 function processData(input) {
-    //Enter your code here
-    input = input.split("\n");
-    
-    var  numberOfPeople = Number(input[0]);
-    
-    var givenArray = input[1].split(" ").map(Number);
-    
-    var  count = 1;
-    
-    for ( var  i = 1; i < numberOfPeople; i++ ) {
-        
-        if ( givenArray[i-1] > givenArray[i] ) {
-            
-            count = count + 1;
-        }
+  //Enter your code here
+  input = input.split("\n");
+
+  var numberOfPeople = Number(input[0]);
+
+  var givenArray = input[1].split(" ").map(Number);
+
+  var count = 1;
+
+  for (var i = 1; i < numberOfPeople; i++) {
+    if (givenArray[i - 1] > givenArray[i]) {
+      count = count + 1;
     }
-    
-    console.log(count);
-    
-} 
-processData('8\n1 2 4 3 5 8 2 4')
+  }
+
+  console.log(count);
+}
+processData("8\n1 2 4 3 5 8 2 4");

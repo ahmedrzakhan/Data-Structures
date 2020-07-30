@@ -1,5 +1,5 @@
-// You are provided with N names, your task is to write a code that prints 
-// the name along with number of times it is present separated by space. 
+// You are provided with N names, your task is to write a code that prints
+// the name along with number of times it is present separated by space.
 // (See sample test case for better understanding)
 
 // Input Format
@@ -14,7 +14,7 @@
 
 // Output Format
 
-// Output each name in a sorted manner along with number of times it is present in 
+// Output each name in a sorted manner along with number of times it is present in
 // the list of names.
 
 // Sample Input 0
@@ -28,39 +28,33 @@
 // masai 2
 // school 1
 
-
 function processData(input) {
-    //Enter your code here
-    var elementObject = {};
-    
-    input = input.split('\n');
-    // console.log('input', input);
-    
-    numberOfElements = Number(input[0]);
-    // console.log('numberOfElements', numberOfElements);
-    
-    input.shift();
-    // console.log('input.shift', input);
-    
-    input.sort();
-    // console.log('input.sort', input);
-    
-    
-    for ( var i = 0; i < numberOfElements; i++ ) {
-        
-        if ( elementObject[ input[ i ] ] ) {
-            elementObject[ input [ i ] ] = elementObject[ input [ i ] ] + 1 ;
-        } else {
-            elementObject[ input [ i ] ] = 1;
-        }
+  //Enter your code here
+  var elementObject = {};
+
+  input = input.split("\n");
+  // console.log('input', input);
+
+  numberOfElements = Number(input[0]);
+  // console.log('numberOfElements', numberOfElements);
+
+  input.shift();
+  // console.log('input.shift', input);
+
+  input.sort();
+  // console.log('input.sort', input);
+
+  for (var i = 0; i < numberOfElements; i++) {
+    if (elementObject[input[i]]) {
+      elementObject[input[i]] = elementObject[input[i]] + 1;
+    } else {
+      elementObject[input[i]] = 1;
     }
-    
-    // console.log('elementObject', elementObject);
-    
-    for ( var key in elementObject ) {
-        console.log( key, elementObject[key] );
-    }
-    
-    
-    
+  }
+
+  // console.log('elementObject', elementObject);
+
+  for (var key in elementObject) {
+    console.log(key, elementObject[key]);
+  }
 }

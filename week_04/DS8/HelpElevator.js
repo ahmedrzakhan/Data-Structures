@@ -28,36 +28,32 @@
 // Enter
 // Beep
 
-
-
 function processData(input) {
-    //Enter your code here
-    // console.log('input', input);
-    // console.log('typeof input', typeof input);
-    
-    array1 = input.split('\n');
-    // console.log('array1', array1);
-    // console.log('typeof array1', typeof array1);
-    
-    totalPeople = Number(array1[0]);
-    // console.log('totalPeople', totalPeople);
-    // console.log('typeof totalPeople', typeof totalPeople);
-    
-    individuals = array1[1].split(' ').map(function(element) {
-        return Number(element)
-    });
-    // console.log('individuals', individuals);
-    // console.log('individuals', typeof individuals);
-    // console.log('individuals[0]', individuals[0]);
-    // console.log('typeof individuals[0]', typeof individuals[0]);
-    
-    
-    for ( index = 0; index < totalPeople; index++) {
-        if ( individuals[index] < 85 ) {
-            console.log('Enter')
-        } else {
-            console.log('Beep');
-        }
+  //Enter your code here
+  // console.log('input', input);
+  // console.log('typeof input', typeof input);
+
+  array1 = input.split("\n");
+  // console.log('array1', array1);
+  // console.log('typeof array1', typeof array1);
+
+  totalPeople = Number(array1[0]);
+  // console.log('totalPeople', totalPeople);
+  // console.log('typeof totalPeople', typeof totalPeople);
+
+  individuals = array1[1].split(" ").map(function (element) {
+    return Number(element);
+  });
+  // console.log('individuals', individuals);
+  // console.log('individuals', typeof individuals);
+  // console.log('individuals[0]', individuals[0]);
+  // console.log('typeof individuals[0]', typeof individuals[0]);
+
+  for (index = 0; index < totalPeople; index++) {
+    if (individuals[index] < 85) {
+      console.log("Enter");
+    } else {
+      console.log("Beep");
     }
-    
-} 
+  }
+}

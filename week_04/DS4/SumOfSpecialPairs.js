@@ -35,66 +35,62 @@
 // (5, 3) -> abs(12 – 5) = 7
 // 11 + 4 + 2 + 5 + 3 + 9 + 4 + 7 = 45
 
-
-
 function processData(input) {
-    sum = 0;
-    isPrime = true;
-    //Enter your code here
-//     console.log('input', input);
-//     console.log('typeof input', typeof input);
-    
-    array1 = input.split('\n');
-//     console.log('array1', array1);
-//     console.log('typeof array1', typeof array1);
-    
-    totalElements = Number(array1[0]);
-//     console.log('totalElements', totalElements);
-//     console.log('typeof totalElements', typeof totalElements);
-    
-    individualElements = array1[1].split(' ').map(Number);
-//     console.log('individualElements', individualElements);
-//     console.log('typeof individualElements', typeof individualElements);
-//     console.log('individualElements[0]', individualElements[0]);
-    
-    lengthOfIndividualElements = individualElements.length;
-    // console.log('lengthOfIndividualElements', lengthOfIndividualElements);
-    
-    for ( var i = 0; i < lengthOfIndividualElements; i++) {
-        for ( var j = i + 1; j < lengthOfIndividualElements; j++) {
+  sum = 0;
+  isPrime = true;
+  //Enter your code here
+  //     console.log('input', input);
+  //     console.log('typeof input', typeof input);
 
-            if ( j > i) {
-                 Prime = checkIfPrime( j, i); 
-                
-                if ( Prime ) {
-                    // console.log( j, i );
-                    sum = sum + Math.abs( individualElements[ j ] - individualElements[ i ] );
-                }
-            }     
+  array1 = input.split("\n");
+  //     console.log('array1', array1);
+  //     console.log('typeof array1', typeof array1);
+
+  totalElements = Number(array1[0]);
+  //     console.log('totalElements', totalElements);
+  //     console.log('typeof totalElements', typeof totalElements);
+
+  individualElements = array1[1].split(" ").map(Number);
+  //     console.log('individualElements', individualElements);
+  //     console.log('typeof individualElements', typeof individualElements);
+  //     console.log('individualElements[0]', individualElements[0]);
+
+  lengthOfIndividualElements = individualElements.length;
+  // console.log('lengthOfIndividualElements', lengthOfIndividualElements);
+
+  for (var i = 0; i < lengthOfIndividualElements; i++) {
+    for (var j = i + 1; j < lengthOfIndividualElements; j++) {
+      if (j > i) {
+        Prime = checkIfPrime(j, i);
+
+        if (Prime) {
+          // console.log( j, i );
+          sum = sum + Math.abs(individualElements[j] - individualElements[i]);
         }
+      }
     }
-    console.log(sum);
+  }
+  console.log(sum);
 }
 
-checkIfPrime = function( j, i ) {
-    isPrime = true;
-    for ( var index = 2; index <= Math.sqrt( j - i ); index++) {        
-        
-        if ( ( j - i ) % index === 0 ) {
-            isPrime = false;
-            break;
-        }
+checkIfPrime = function (j, i) {
+  isPrime = true;
+  for (var index = 2; index <= Math.sqrt(j - i); index++) {
+    if ((j - i) % index === 0) {
+      isPrime = false;
+      break;
     }
-    
-        if ( j - i === 1) {
-            isPrime = false;
-        }
-    
-    if ( isPrime ) {
-        return isPrime = true;
-    } else {
-        return isPrime = false;
-    }
-    
-    return isPrime;
-}
+  }
+
+  if (j - i === 1) {
+    isPrime = false;
+  }
+
+  if (isPrime) {
+    return (isPrime = true);
+  } else {
+    return (isPrime = false);
+  }
+
+  return isPrime;
+};

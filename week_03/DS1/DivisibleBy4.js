@@ -19,13 +19,11 @@
 
 // Yes
 
-
-
 function processData(input) {
-    //Enter your code here
-    if (input % 4 === 0) {
-        console.log('Yes')
-    }  else {
-        console.log('No')
-    }
-} 
+  //Enter your code here
+  if (input % 4 === 0) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
+}

@@ -30,56 +30,50 @@
 // 19:05:45
 
 function timeConversion(s) {
+  s = s.split(":");
+  // console.log('s', s);
 
-    s = s.split(':');
-    // console.log('s', s);
-    
-    return chechkIfAmOrPm(s);
-
+  return chechkIfAmOrPm(s);
 }
 
-var chechkIfAmOrPm = function(time) {
-    // console.log('time', time);
-    
-    var thirdElement = time[2];
-    // console.log('thirdElement', thirdElement);
-    
-    if ( thirdElement[2] === 'A') {
-        // console.log('AM');
-       return convertToAm(time)
-        
-    } else {
-        // console.log('PM');
-       return convertToPm(time)
-    }
-}
+var chechkIfAmOrPm = function (time) {
+  // console.log('time', time);
 
-var convertToAm = function(time) {
-    // console.log(time);
-    
-        if ( time[0] === "12" ) {
-            time[0] = "00";
-            
-    }
-    
-    console.log( time.join(':').replace('AM', ''));
-    return (time.join(':').replace('AM', ''))  
-}
+  var thirdElement = time[2];
+  // console.log('thirdElement', thirdElement);
 
-var convertToPm = function(time) {
-    // console.log(time);
+  if (thirdElement[2] === "A") {
+    // console.log('AM');
+    return convertToAm(time);
+  } else {
+    // console.log('PM');
+    return convertToPm(time);
+  }
+};
 
-        if ( time[0] === "12" ) {
-            time[0] = "12";
-            
-        } else {
-            
-            time[0] = Number( time[0] ) + 12;
-        }
+var convertToAm = function (time) {
+  // console.log(time);
 
-        console.log( time.join(':').replace('PM', ''));
-    
-    return (time.join(':').replace('PM', '')) 
-}
+  if (time[0] === "12") {
+    time[0] = "00";
+  }
 
-timeConversion('07:05:45PM');
+  console.log(time.join(":").replace("AM", ""));
+  return time.join(":").replace("AM", "");
+};
+
+var convertToPm = function (time) {
+  // console.log(time);
+
+  if (time[0] === "12") {
+    time[0] = "12";
+  } else {
+    time[0] = Number(time[0]) + 12;
+  }
+
+  console.log(time.join(":").replace("PM", ""));
+
+  return time.join(":").replace("PM", "");
+};
+
+timeConversion("07:05:45PM");

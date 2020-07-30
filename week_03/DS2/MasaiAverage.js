@@ -21,31 +21,30 @@
 // 2
 
 function processData(input) {
-    var sum = 0, average = 0;
-    //Enter your code here
-    // console.log(input);
-    
-    string1 = input.split('\n');
-    // console.log('string1', string1);
-    
-    numberOfIntegers = Number(string1[0]);
-    // console.log('numberOfIntegers', numberOfIntegers);
-    // console.log('typeof numberOfIntegers', typeof numberOfIntegers)
+  var sum = 0,
+    average = 0;
+  //Enter your code here
+  // console.log(input);
 
-    integersInString = string1[1];
-    // console.log('integersInString', integersInString);
-    
-    integers = integersInString.split(' ');
-    // console.log('integers', integers);
-    
-    for ( var i = 0; i < numberOfIntegers; i++) {
-        sum += Number(integers[i]);
-    }
-    
-     // console.log('sum', sum);
-    // console.log('typeof sum', typeof sum);
-    average = sum / numberOfIntegers
-    console.log(Math.ceil(average));
+  string1 = input.split("\n");
+  // console.log('string1', string1);
 
+  numberOfIntegers = Number(string1[0]);
+  // console.log('numberOfIntegers', numberOfIntegers);
+  // console.log('typeof numberOfIntegers', typeof numberOfIntegers)
 
-} 
+  integersInString = string1[1];
+  // console.log('integersInString', integersInString);
+
+  integers = integersInString.split(" ");
+  // console.log('integers', integers);
+
+  for (var i = 0; i < numberOfIntegers; i++) {
+    sum += Number(integers[i]);
+  }
+
+  // console.log('sum', sum);
+  // console.log('typeof sum', typeof sum);
+  average = sum / numberOfIntegers;
+  console.log(Math.ceil(average));
+}

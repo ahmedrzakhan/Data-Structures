@@ -1,5 +1,5 @@
-// Given five positive integers, find the minimum and maximum values that can be 
-// calculated by summing exactly four of the five integers. Then print the respective 
+// Given five positive integers, find the minimum and maximum values that can be
+// calculated by summing exactly four of the five integers. Then print the respective
 // minimum and maximum values as a single line of two space-separated long integers.
 
 // For example, . Our minimum sum is  and our maximum sum is . We would print
@@ -19,11 +19,10 @@
 
 // Constraints
 
-
 // Output Format
 
-// Print two space-separated long integers denoting the respective minimum and maximum 
-// values that can be calculated by summing exactly four of the five integers. (The output 
+// Print two space-separated long integers denoting the respective minimum and maximum
+// values that can be calculated by summing exactly four of the five integers. (The output
 //     can be greater than a 32 bit integer.)
 
 // Sample Input
@@ -34,7 +33,7 @@
 // 10 14
 // Explanation
 
-// Our initial numbers are , , , , and . We can calculate the following sums using four 
+// Our initial numbers are , , , , and . We can calculate the following sums using four
 // of the five integers:
 
 // If we sum everything except , our sum is .
@@ -44,21 +43,19 @@
 // If we sum everything except , our sum is .
 // Hints: Beware of integer overflow! Use 64-bit Integer.
 
-
 function miniMaxSum(arr) {
-    
-    var sumOfMini = 0, sumOfMax = 0;
-    
-    var arr = arr.sort( function (a, b) {
-        return a - b
-    });
-    
-    for ( var i = 0; i < arr.length - 1; i++ ) {
-        
-        sumOfMini = sumOfMini + arr[i];
-        
-        sumOfMax = sumOfMax + arr[i + 1];
-    }
-    
-    console.log(sumOfMini, sumOfMax);
+  var sumOfMini = 0,
+    sumOfMax = 0;
+
+  var arr = arr.sort(function (a, b) {
+    return a - b;
+  });
+
+  for (var i = 0; i < arr.length - 1; i++) {
+    sumOfMini = sumOfMini + arr[i];
+
+    sumOfMax = sumOfMax + arr[i + 1];
+  }
+
+  console.log(sumOfMini, sumOfMax);
 }

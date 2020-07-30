@@ -1,4 +1,4 @@
-// You are provided an integer N. Depending upon the value, you have to print a 
+// You are provided an integer N. Depending upon the value, you have to print a
 // string as per the following rules:
 
 // Print "Masai" (without quotes) if the integer is a multiple of 7
@@ -24,23 +24,22 @@
 
 // Masai
 
-
 function processData(input) {
-    //Enter your code here
-    // console.log('input', input);
-    // console.log('typeof input', typeof input)
-    
-    givenNumber = Number(input);
-    // console.log('givenNumber', givenNumber);
-    // console.log('typeof givenNumber', typeof givenNumber);
-    
-    if ( givenNumber % 7 === 0 && givenNumber % 5 === 0 ) {
-        console.log("Masai School");
-    } else if ( givenNumber % 7 === 0 ) {
-        console.log("Masai");
-    } else if ( givenNumber % 5 === 0 ) {
-        console.log("School");
-    } else {
-        console.log("Hurray!");
-    }
-} 
+  //Enter your code here
+  // console.log('input', input);
+  // console.log('typeof input', typeof input)
+
+  givenNumber = Number(input);
+  // console.log('givenNumber', givenNumber);
+  // console.log('typeof givenNumber', typeof givenNumber);
+
+  if (givenNumber % 7 === 0 && givenNumber % 5 === 0) {
+    console.log("Masai School");
+  } else if (givenNumber % 7 === 0) {
+    console.log("Masai");
+  } else if (givenNumber % 5 === 0) {
+    console.log("School");
+  } else {
+    console.log("Hurray!");
+  }
+}

@@ -1,5 +1,5 @@
-// You are given a matrix(2 dimensional array) of integers of n rows and m columns. 
-// Your task is to write a programme that calculates sum of all such integers present 
+// You are given a matrix(2 dimensional array) of integers of n rows and m columns.
+// Your task is to write a programme that calculates sum of all such integers present
 // in the matrix which are divisible by 3.
 
 // Input Format
@@ -30,49 +30,46 @@
 
 // The given 2 dimensional array has 2 rows and 3 columns.
 
-// There are two integers present in this array which are divisible by 3 (those are 
+// There are two integers present in this array which are divisible by 3 (those are
 // 3 and 6). So, the output is 9.
 
-
 function processData(input) {
-    //Enter your code here
-    input = input.split('\n');
-    // console.log('input', input);
-    
-    numberOfRows = Number(input[0]);
-    numberOfColumns = Number(input[1]);
-    
-    var [numberOfRows, numberOfColumns] = input[0].split(' ').map(Number);
-    
-    
-    // console.log('numberOfRows', numberOfRows);
-    // console.log('numberOfColumns', numberOfColumns);
-    
-    var matrix = [];
-//     row = input[1].split(' ').map(Number);
-//     console.log('row', row);
-    
-//     rowCol = row[1];
-//     console.log('rowCol', rowCol);
-    
-    for ( var i = 1; i <= numberOfRows; i++ ) {
-        row = input[i].split(' ').map(Number);
-        
-        for( var j = 0; j < numberOfColumns; j++ ) {
-            rowCol = row[j];
-            // console.log('rowCol', rowCol);
-            if ( rowCol % 3 === 0 ) {
-                matrix.push(rowCol);
-            }
-        }
+  //Enter your code here
+  input = input.split("\n");
+  // console.log('input', input);
+
+  numberOfRows = Number(input[0]);
+  numberOfColumns = Number(input[1]);
+
+  var [numberOfRows, numberOfColumns] = input[0].split(" ").map(Number);
+
+  // console.log('numberOfRows', numberOfRows);
+  // console.log('numberOfColumns', numberOfColumns);
+
+  var matrix = [];
+  //     row = input[1].split(' ').map(Number);
+  //     console.log('row', row);
+
+  //     rowCol = row[1];
+  //     console.log('rowCol', rowCol);
+
+  for (var i = 1; i <= numberOfRows; i++) {
+    row = input[i].split(" ").map(Number);
+
+    for (var j = 0; j < numberOfColumns; j++) {
+      rowCol = row[j];
+      // console.log('rowCol', rowCol);
+      if (rowCol % 3 === 0) {
+        matrix.push(rowCol);
+      }
     }
-    
-    // console.log('matrix', matrix);
-    
-    sum = matrix.reduce(function(acc, k) {
-        return acc + k;
-    }, 0);
-    
-    console.log(sum);
-    
-} 
+  }
+
+  // console.log('matrix', matrix);
+
+  sum = matrix.reduce(function (acc, k) {
+    return acc + k;
+  }, 0);
+
+  console.log(sum);
+}

@@ -24,22 +24,21 @@
 
 // 8
 
-
 function processData(input) {
-    //Enter your code here
-    var x;
-    
-    input = Number(input); 
-    
-    if (input === 0) {
-        console.log(-1);
-        return
-    }
-    
-    x = Math.floor(32 / input)
-    if (x === 0) {
-        console.log("Too Low")
-    } else {
-        console.log(x)
-        }
-} 
+  //Enter your code here
+  var x;
+
+  input = Number(input);
+
+  if (input === 0) {
+    console.log(-1);
+    return;
+  }
+
+  x = Math.floor(32 / input);
+  if (x === 0) {
+    console.log("Too Low");
+  } else {
+    console.log(x);
+  }
+}

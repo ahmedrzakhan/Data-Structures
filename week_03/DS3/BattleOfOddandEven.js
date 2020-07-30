@@ -1,6 +1,6 @@
-// You are given an array A of N integers. Your task is to write a programme that prints 
-// "Odd" (without quotes) if the sum of all odd numbers present in the array is greater 
-// than sum of all the even numbers present in the array. In all other cases, print 
+// You are given an array A of N integers. Your task is to write a programme that prints
+// "Odd" (without quotes) if the sum of all odd numbers present in the array is greater
+// than sum of all the even numbers present in the array. In all other cases, print
 // "Even" (without quotes).
 
 // Input Format
@@ -32,61 +32,56 @@
 
 // Since 6>4, Even is the required output.
 
-
-
 function processData(input) {
-    sumOfOddNumbers= 0 ;
-    sumOfEvenNumbers = 0
-    //Enter your code here
-    // console.log('input', input);
-    // console.log('typeof input', typeof input);
-    
-    arrayForString = input.split('\n');
-    // console.log('arrayForString', arrayForString);
-    
-    numberOfElements = arrayForString[0];
-    // console.log('numberOfElements', numberOfElements);
-    // console.log('typeof numberOfElements', typeof numberOfElements);
+  sumOfOddNumbers = 0;
+  sumOfEvenNumbers = 0;
+  //Enter your code here
+  // console.log('input', input);
+  // console.log('typeof input', typeof input);
 
-    
-    elementsOfArray = arrayForString[1];
-    // console.log('elementsOfArray', elementsOfArray);
-    // console.log('typeof elementsOfArray', typeof elementsOfArray);
-    
-    individualElements = elementsOfArray.split(' ');
-    // console.log('individualElements', individualElements);
-    // console.log('typeof individualElements', typeof individualElements);
-    
-    // console.log('individualElements[0]', individualElements[0]);
-    // console.log('typeof individualElements[0]', typeof Number(individualElements[0]));
-    
-    splitNumberOfElements = numberOfElements.split(' ');
-    // console.log('splitNumberOfElements', splitNumberOfElements);
-    // console.log('typeof splitNumberOfElements', typeof Number(splitNumberOfElements));
-    
-    // console.log('Number(splitNumberOfElements)', Number(splitNumberOfElements));
-    
-    
-    for (i = 0; i < Number(numberOfElements); i++) {
-        // console.log('Number(individualElements[i])', Number(individualElements[i]));
-        
-        if ( Number(individualElements[i]) % 2 === 0 ) {
-            // console.log('Number(individualElements[i]) % 2', Number(individualElements[i]));
-            sumOfEvenNumbers += Number(individualElements[i]);
-            // console.log('sumOfEvenNumbers', sumOfEvenNumbers);
-        } else {
-         sumOfOddNumbers += Number(individualElements[i]);
-        // console.log('sumOfOddNumbers', sumOfOddNumbers);
-        }
-    }
-    
-    if (sumOfOddNumbers > sumOfEvenNumbers) {
-        console.log("Odd");
+  arrayForString = input.split("\n");
+  // console.log('arrayForString', arrayForString);
+
+  numberOfElements = arrayForString[0];
+  // console.log('numberOfElements', numberOfElements);
+  // console.log('typeof numberOfElements', typeof numberOfElements);
+
+  elementsOfArray = arrayForString[1];
+  // console.log('elementsOfArray', elementsOfArray);
+  // console.log('typeof elementsOfArray', typeof elementsOfArray);
+
+  individualElements = elementsOfArray.split(" ");
+  // console.log('individualElements', individualElements);
+  // console.log('typeof individualElements', typeof individualElements);
+
+  // console.log('individualElements[0]', individualElements[0]);
+  // console.log('typeof individualElements[0]', typeof Number(individualElements[0]));
+
+  splitNumberOfElements = numberOfElements.split(" ");
+  // console.log('splitNumberOfElements', splitNumberOfElements);
+  // console.log('typeof splitNumberOfElements', typeof Number(splitNumberOfElements));
+
+  // console.log('Number(splitNumberOfElements)', Number(splitNumberOfElements));
+
+  for (i = 0; i < Number(numberOfElements); i++) {
+    // console.log('Number(individualElements[i])', Number(individualElements[i]));
+
+    if (Number(individualElements[i]) % 2 === 0) {
+      // console.log('Number(individualElements[i]) % 2', Number(individualElements[i]));
+      sumOfEvenNumbers += Number(individualElements[i]);
+      // console.log('sumOfEvenNumbers', sumOfEvenNumbers);
     } else {
-        console.log('Even');
+      sumOfOddNumbers += Number(individualElements[i]);
+      // console.log('sumOfOddNumbers', sumOfOddNumbers);
     }
-   
-} 
+  }
+
+  if (sumOfOddNumbers > sumOfEvenNumbers) {
+    console.log("Odd");
+  } else {
+    console.log("Even");
+  }
+}
 
 // Sample Input
 // 4

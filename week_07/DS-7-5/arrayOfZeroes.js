@@ -1,8 +1,8 @@
 // You have an array of non-negative integers. You can perform one operation on it in
-//  which you can choose i-th index with 0 <= i < n and subtract 1 from both i-th and 
+//  which you can choose i-th index with 0 <= i < n and subtract 1 from both i-th and
 // (i+1) th index of array.
 
-// Your task is to write a program that can comment if it is possible to get an array 
+// Your task is to write a program that can comment if it is possible to get an array
 // of all zeros after several operations.
 
 // Input Format
@@ -14,7 +14,7 @@
 // 0 < N <= 10000
 // Output Format
 
-// If it can be modified into all zeros with several operations output “YES” in a 
+// If it can be modified into all zeros with several operations output “YES” in a
 // single line, otherwise output “NO” instead.
 // Sample Input 0
 
@@ -32,25 +32,24 @@
 // YES
 
 function processData(input) {
-    //Enter your code here
-    input = input.split('\n');
-    // console.log('input', input);
-    
-    numberOfElements = Number(input[0]);
-    // console.log('numberOfElements', numberOfElements);
-    
-    givenArray = input[1].split(' ').map(Number);
-    // console.log('givenArray', givenArray);
-    
-    for ( var i = 0; i < numberOfElements - 1; i++ ) {
-        givenArray[i + 1] = givenArray[i + 1] - givenArray[i];
-        givenArray[i] = 0;
-    }
-    
-    if ( givenArray[numberOfElements - 1] === 0 ) {
-        console.log("YES");
-    } else {
-        console.log("NO");
-    }  
-    
-} 
+  //Enter your code here
+  input = input.split("\n");
+  // console.log('input', input);
+
+  numberOfElements = Number(input[0]);
+  // console.log('numberOfElements', numberOfElements);
+
+  givenArray = input[1].split(" ").map(Number);
+  // console.log('givenArray', givenArray);
+
+  for (var i = 0; i < numberOfElements - 1; i++) {
+    givenArray[i + 1] = givenArray[i + 1] - givenArray[i];
+    givenArray[i] = 0;
+  }
+
+  if (givenArray[numberOfElements - 1] === 0) {
+    console.log("YES");
+  } else {
+    console.log("NO");
+  }
+}

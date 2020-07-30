@@ -1,4 +1,4 @@
-// You are given an array of N elements. Your task is to write a program that 
+// You are given an array of N elements. Your task is to write a program that
 // calculates the sum of all distinct elements present in the array.
 
 // Input Format
@@ -29,45 +29,42 @@
 // Hence, sum is 3
 
 function processData(input) {
-    var distinctElements = [];
-    //Enter your code here
-    // console.log('input', input);
-    // console.log('typeof input', typeof input);
-    
-    array1 = input.split('\n');
-    // console.log('firstArray', array1);
-    // console.log('typeof firstArray', typeof array1);
-    
-    totalElements = Number(array1[0]);
-    
-//     console.log('totalElements', totalElements);
-//     console.log('typeof totalElements', typeof totalElements);
-    
-    elements = array1[1].split(' ').map(Number);
-//     console.log('elements', elements);
-//     console.log('typeof elements', typeof elements);
-//     console.log('elements[0]', elements[0]);
-//     console.log('typeof elements[0]', typeof elements[0]);
-    
-    
-    for ( var index = 0; index < totalElements; index++ ) {
-        valueSeen = elements[ index ];
+  var distinctElements = [];
+  //Enter your code here
+  // console.log('input', input);
+  // console.log('typeof input', typeof input);
 
-           if ( valueSeen === elements[ index + 1 ]) {
-               // console.log(valueSeen);
-           } else {
-               distinctElements.push( elements[ index ] );
-           }
-        
+  array1 = input.split("\n");
+  // console.log('firstArray', array1);
+  // console.log('typeof firstArray', typeof array1);
+
+  totalElements = Number(array1[0]);
+
+  //     console.log('totalElements', totalElements);
+  //     console.log('typeof totalElements', typeof totalElements);
+
+  elements = array1[1].split(" ").map(Number);
+  //     console.log('elements', elements);
+  //     console.log('typeof elements', typeof elements);
+  //     console.log('elements[0]', elements[0]);
+  //     console.log('typeof elements[0]', typeof elements[0]);
+
+  for (var index = 0; index < totalElements; index++) {
+    valueSeen = elements[index];
+
+    if (valueSeen === elements[index + 1]) {
+      // console.log(valueSeen);
+    } else {
+      distinctElements.push(elements[index]);
     }
-        console.log('distinctElements', distinctElements)
+  }
+  console.log("distinctElements", distinctElements);
 
-    sum = distinctElements.reduce(function ( acc, element) {
-        return acc + element
-    }, 0);
-    
-    console.log(sum);
-    } 
+  sum = distinctElements.reduce(function (acc, element) {
+    return acc + element;
+  }, 0);
 
+  console.log(sum);
+}
 
-processData('5\n2 2 2 2 1 1');
+processData("5\n2 2 2 2 1 1");

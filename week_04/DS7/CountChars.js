@@ -1,5 +1,5 @@
 // You are provided a string S. Your task is to print a string which also contains
-//  the number of times that character is repeated. (Read explanation of test case 
+//  the number of times that character is repeated. (Read explanation of test case
 // for better understanding)
 
 // Input Format
@@ -39,18 +39,18 @@
 // a3b3c3a3
 
 function processData(input) {
-    //Enter your code here
-    var result = "";
-    var count = 1;
-    
-    for ( var i = 0; i < input.length; i++ ) {
-        if ( input[i] === input[i + 1] ) {
-            count = count + 1;
-        } else {
-            result = result + input[i] + count;
-            count = 1;
-        }        
+  //Enter your code here
+  var result = "";
+  var count = 1;
+
+  for (var i = 0; i < input.length; i++) {
+    if (input[i] === input[i + 1]) {
+      count = count + 1;
+    } else {
+      result = result + input[i] + count;
+      count = 1;
     }
-    
-    console.log(result)    
-} 
+  }
+
+  console.log(result);
+}

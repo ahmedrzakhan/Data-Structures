@@ -28,50 +28,48 @@
 // 4 4 4 4
 // Sample Output 0
 
-// 0 1 2 3 4 
-// 0 1 2 3 4 
-// 0 1 2 3 4 
-// 0 1 2 3 4 
+// 0 1 2 3 4
+// 0 1 2 3 4
+// 0 1 2 3 4
+// 0 1 2 3 4
 
 function processData(input) {
-    //Enter your code here
-    input = input.split('\n');
-    // console.log("input", input);
-    
-    var [ numberOfRows, numberOfColumns ] = input[0].split(' ').map(Number);
-    // console.log("numberOfRows, numberOfColumns", numberOfRows, numberOfColumns);
-    
-    var matrix = [];
-    for ( var i = 1; i <= numberOfRows; i++ ) {
-        matrix.push(input[i].split(' ').map(Number));
-    }  
-    // console.log(matrix);
+  //Enter your code here
+  input = input.split("\n");
+  // console.log("input", input);
 
-    var result = transpose(matrix,  numberOfRows, numberOfColumns);
-} 
+  var [numberOfRows, numberOfColumns] = input[0].split(" ").map(Number);
+  // console.log("numberOfRows, numberOfColumns", numberOfRows, numberOfColumns);
 
-var transpose = function(matrix, numberOfRows, numberOfColumns ) {
-      
-    for ( var j = 0; j < numberOfColumns; j++ ) {
-        var row = "";
-        
-        for ( var i = 0; i < numberOfRows; i++ ) {
-            row  = row + matrix[i][j] + " ";
-            console.log("i, j", i, j);
-        }   
-    console.log(row);
-    }   
+  var matrix = [];
+  for (var i = 1; i <= numberOfRows; i++) {
+    matrix.push(input[i].split(" ").map(Number));
+  }
+  // console.log(matrix);
+
+  var result = transpose(matrix, numberOfRows, numberOfColumns);
 }
 
-processData('5 4\n0 0 0 0\n1 1 1 1\n2 2 2 2\n3 3 3 3\n4 4 4 4')
+var transpose = function (matrix, numberOfRows, numberOfColumns) {
+  for (var j = 0; j < numberOfColumns; j++) {
+    var row = "";
 
+    for (var i = 0; i < numberOfRows; i++) {
+      row = row + matrix[i][j] + " ";
+      console.log("i, j", i, j);
+    }
+    console.log(row);
+  }
+};
+
+processData("5 4\n0 0 0 0\n1 1 1 1\n2 2 2 2\n3 3 3 3\n4 4 4 4");
 
 // Create 2D Array
 
-input = input.split('\n');
-let [row, col] = input[0].split(' ').map(Number);
+input = input.split("\n");
+let [row, col] = input[0].split(" ").map(Number);
 console.log(row, col);
 input.shift();
 console.log("input", input);
-let mat = input.map(item => item.split(' ').map(Number));
+let mat = input.map((item) => item.split(" ").map(Number));
 console.log(mat);

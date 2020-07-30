@@ -22,27 +22,23 @@
 
 // 2
 
-
-
-
 function processData(input) {
-    //Enter your code here
-    cnt = 0;
-    // number_of_integers = input
-   // console.log('input', input);
-    array1 = input.split('\n');
-    
-    lengthOfArray = array1[0];
-    // console.log('lengthOfArray', lengthOfArray);
-    
-    elements = array1[1].split(' ');
-    
-    for ( i = 0; i < lengthOfArray; i++) {
-        if ( Number(elements[i]) < 0) {
-            cnt += 1
-        }
+  //Enter your code here
+  cnt = 0;
+  // number_of_integers = input
+  // console.log('input', input);
+  array1 = input.split("\n");
+
+  lengthOfArray = array1[0];
+  // console.log('lengthOfArray', lengthOfArray);
+
+  elements = array1[1].split(" ");
+
+  for (i = 0; i < lengthOfArray; i++) {
+    if (Number(elements[i]) < 0) {
+      cnt += 1;
     }
-    
-    console.log(cnt);
-    
-} 
+  }
+
+  console.log(cnt);
+}

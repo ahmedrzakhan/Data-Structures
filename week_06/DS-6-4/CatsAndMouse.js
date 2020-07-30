@@ -19,7 +19,7 @@
 // Input Format
 
 // The first line contains a single integer, , denoting the number of queries.
-// Each of the  subsequent lines contains three space-separated integers describing 
+// Each of the  subsequent lines contains three space-separated integers describing
 // the respective values of  (cat 's location),  (cat 's location), and  (mouse 's location).
 
 // Constraints
@@ -48,12 +48,11 @@
 // Because the mouse escapes, we print Mouse C on a new line.
 
 function catAndMouse(x, y, z) {
-     
-    if ( Math.abs(x - z) === Math.abs(y - z)) {
-        return ("Mouse C");
-    } else if ( Math.abs( x - z ) < Math.abs( y - z )) {
-        return ("Cat A");
-    } else if ( Math.abs( x - z ) > Math.abs( y - z )) {
-         return ("Cat B");
-    }
+  if (Math.abs(x - z) === Math.abs(y - z)) {
+    return "Mouse C";
+  } else if (Math.abs(x - z) < Math.abs(y - z)) {
+    return "Cat A";
+  } else if (Math.abs(x - z) > Math.abs(y - z)) {
+    return "Cat B";
+  }
 }

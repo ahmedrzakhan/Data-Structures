@@ -1,4 +1,4 @@
-// A substring is a contiguous sequence of characters within a string. You 
+// A substring is a contiguous sequence of characters within a string. You
 // are given two strings: S1 and S2.
 
 // Print "Yes" if S2 is a substring of S1, else print "No"
@@ -26,30 +26,29 @@
 // Yes
 
 function processData(input) {
-    //Enter your code here
-    
-    input = input.split('\n');
-    
-    var firstArray = input[0].split('');
-    var secondArray = input[1].split('');
-    var count = 0;
-    
-    // console.log(firstArray, secondArray);
-    
-    secondArray.map(function (element) {
-        var check = firstArray.includes(element);
-        
-        if ( check ) {
-            count = count + 1;
-        }
-    });
-    
-    // console.log(count);
-    
-    if ( count === secondArray.length ) {
-        console.log("Yes");
-    } else {
-        console.log("No")
+  //Enter your code here
+
+  input = input.split("\n");
+
+  var firstArray = input[0].split("");
+  var secondArray = input[1].split("");
+  var count = 0;
+
+  // console.log(firstArray, secondArray);
+
+  secondArray.map(function (element) {
+    var check = firstArray.includes(element);
+
+    if (check) {
+      count = count + 1;
     }
-    
-} 
+  });
+
+  // console.log(count);
+
+  if (count === secondArray.length) {
+    console.log("Yes");
+  } else {
+    console.log("No");
+  }
+}
