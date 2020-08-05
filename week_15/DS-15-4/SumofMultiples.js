@@ -66,3 +66,26 @@ function runProgram(input) {
 }
 
 runProgram("3 10 5");
+
+// ---------------------------- Using Recursion --------------------------------
+
+function runProgram(input) {
+  let [n, k, y] = input.split(" ").map(Number);
+  //   console.log("n, k, y", n, k, y);
+
+  let sum = 0;
+
+  const result = sumOfMultiples(n, k, y, sum);
+  console.log(result);
+}
+
+const sumOfMultiples = (n, k, y, sum) => {
+  if (k === 0) {
+    return sum;
+  } else {
+    if ((n * k) % y === 0) {
+      sum = sum + n * k;
+    }
+    return sumOfMultiples(n, k - 1, y, sum);
+  }
+};
