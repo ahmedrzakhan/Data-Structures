@@ -82,9 +82,11 @@ function runProgram(input) {
 
   const findMinLength = (str, i, j, n) => {
     if (i === n) {
+      // Base Case
       return minimum;
     }
     if (i < n && j === n) {
+      // Changing I
       return findMinLength(str, i + 1, i + 1, n);
     } else {
       let subStr = str.substring(i, j + 1);
@@ -112,3 +114,4 @@ const removeDuplicates = (str) => {
 
   return Object.keys(obj).length;
 };
+   
