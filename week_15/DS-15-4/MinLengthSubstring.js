@@ -71,3 +71,44 @@ const getDistinctChars = (s) => {
 };
 
 runProgram("zoomsessionmooz");
+
+//  --------------------------------------- Using Recursion ---------------------------------------
+
+function runProgram(input) {
+  let distinctLength = removeDuplicates(input);
+  //   console.log("distinctLength", distinctLength);
+
+  let minimum = Number.MAX_SAFE_INTEGER;
+
+  const findMinLength = (str, i, j, n) => {
+    if (i === n) {
+      return minimum;
+    }
+    if (i < n && j === n) {
+      return findMinLength(str, i + 1, i + 1, n);
+    } else {
+      let subStr = str.substring(i, j + 1);
+
+      let subStrUniq = removeDuplicates(subStr);
+
+      if (subStrUniq === distinctLength) {
+        if (subStr.length < minimum) {
+          minimum = subStr.length;
+        }
+      }
+      return findMinLength(str, i, j + 1, n);
+    }
+  };
+
+  const result = findMinLength(input, 0, 0, input.length);
+  console.log(result);
+}
+
+const removeDuplicates = (str) => {
+  let obj = {};
+  for (let i = 0; i < str.length; i++) {
+    obj[str[i]] = str[i];
+  }
+
+  return Object.keys(obj).length;
+};
