@@ -42,11 +42,11 @@ function runProgram(input) {
   let sorted = quickSort(arr, start, end);
   //   console.log(sorted);
 
-  let sum = 0;
+  let sum = 0, last;
   for (let i = 0; i < sorted.length; i++) {
     if (sum < money) {
       sum = sum + sorted[i];
-      var last = i;
+      last = i;
     }
   }
   //   console.log("sum", sum);
