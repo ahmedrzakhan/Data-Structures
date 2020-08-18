@@ -47,7 +47,8 @@ function runProgram(input) {
     if (i === n + 1) {
       return sum;
     } else {
-      return ePower(i + 1, sum + x ** i / fact(i));
+      sum = sum + x ** i / fact(i);
+      return ePower(i + 1, sum);
     }
   };
 
