@@ -31,20 +31,18 @@
 // 3
 
 function processData(input) {
-  //Enter your code here
-  const n = Number(input);
+  let n = Number(input);
 
-  const a = fibonacci(n);
-  console.log("a", a);
+  const result = fib(n);
+  console.log(result);
 }
 
-const fibonacci = (n) => {
-  if (n === 0) {
-    return 0;
-  } else if (n === 1) {
-    return 1;
+const fib = (n) => {
+  if (n < 2) {
+    return n;
   } else {
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    return fib(n - 1) + fib(n - 2);
   }
 };
+
 processData("4");

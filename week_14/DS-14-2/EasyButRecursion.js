@@ -1,4 +1,4 @@
-// This is an easy question. You just have to find the sum of an array given the 
+// This is an easy question. You just have to find the sum of an array given the
 // elements of the array.
 
 // The only constraint is that you have to write a recursive code
@@ -39,27 +39,28 @@
 // 3
 
 function processData(input) {
-  //Enter your code here
   input = input.split("\n");
+
   let tcs = Number(input[0]);
-  // console.log("tcs", tcs);
+  //   console.log("tcs", tcs);
 
-  let line = 1;
+  for (let i = 1; i < input.length; i++) {
+    let n = Number(input[i++]);
+    let arr = input[i].split(" ").map(Number);
 
-  for (let i = 0; i < tcs; i++) {
-    let n = Number(input[line++]);
-    let arr = input[line++].split(" ").map(Number);
-    // console.log(n, arr);
-    let result = calculateSum(arr, n, 0);
+    let result = getSum(arr, n - 1, 0);
     console.log(result);
+    // console.log(n, arr)
   }
 }
 
-const calculateSum = function (a, n, i) {
-  if (i === n - 1) {
-    return a[i];
+const getSum = (arr, n, sum) => {
+  if (n === -1) {
+    return sum;
   } else {
-    return a[i] + calculateSum(a, n, i + 1);
+    sum = sum + arr[n];
+
+    return getSum(arr, n - 1, sum);
   }
 };
 

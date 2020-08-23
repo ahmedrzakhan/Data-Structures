@@ -53,4 +53,25 @@ function processData(input) {
   console.log(result);
 }
 
+// processData("a3b2");
+
+
+
+function processData(input) {
+  let str = "";
+
+  for (let i = 0; i < input.length; i++) {
+    if (typeof input[i] === "string") {
+      i = i + 1;
+      if (typeof Number(input[i]) === "number") {
+        i = i - 1;
+      }
+      for (let j = 0; j < Number(input[i + 1]); j++) {
+        str = str + input[i];
+      }
+    }
+  }
+
+  console.log(str);
+}
 processData("a3b2");
