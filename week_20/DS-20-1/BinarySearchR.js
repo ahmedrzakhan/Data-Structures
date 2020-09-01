@@ -1,4 +1,4 @@
-// Binary Search - Iterative
+// Binary Search - Recursive
 // Description
 
 // Given n distinct numbers, implement iterative binary search to check the presence
@@ -53,17 +53,18 @@ function runProgram(input) {
 
 const checkPresence = (arr, start, end, target) => {
   while (start <= end) {
-    let mid = Math.floor((start + end) / 2);
+    // let mid = Math.floor((start + end) / 2);
+    let mid = start + Math.floor((end - start) / 2);
 
     if (arr[mid] === target) {
       return 1;
     } else if (arr[mid] < target) {
-      start = mid + 1;
+      return checkPresence(arr, mid + 1, end, target);
     } else if (arr[mid] > target) {
-      end = mid - 1;
+      return checkPresence(arr, start, mid - 1, target);
     }
   }
   return -1;
 };
 
-runProgram("5 6\n2 -2 0 3 4");
+runProgram("5 4\n2 -2 0 3 4");

@@ -78,7 +78,8 @@ function runProgram(input) {
 
 const checkPresence = (arr, start, end, target) => {
   while (start <= end) {
-    let mid = Math.floor((start + end) / 2);
+    // let mid = Math.floor((start + end) / 2);
+    let mid = start + Math.floor((end - start) / 2);
 
     if (arr[mid] === target) {
       return "YES";
