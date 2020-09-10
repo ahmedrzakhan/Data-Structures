@@ -40,22 +40,27 @@
 // Sample Output 1
 
 // 3
-
+// TC - O(NLogN)
 function runProgram(input) {
   input = input.split("\n");
-  let [n, days] = input[0].split(" ").map(Number);
 
-  let arr = input[1].split(" ").map(Number);
+  let [n, days] = input[0].trim().split(" ").map(Number);
+  //   console.log("n, days", n, days);
+
+  let arr = input[1].trim().split(" ").map(Number);
+  //   console.log("arr", arr);
 
   let lo = Math.max(...arr);
+  //   console.log("lo", lo);
 
   let hi = arr.reduce((acc, ele) => acc + ele, 0);
+  //   console.log("hi", hi);
 
-  const search = (lo, hi) => {
+  const BS = (lo, hi) => {
     while (lo < hi) {
       let mid = lo + Math.floor((hi - lo) / 2);
 
-      if (check(arr, mid, days)) {
+      if (check(mid)) {
         hi = mid;
       } else {
         lo = mid + 1;
@@ -63,31 +68,31 @@ function runProgram(input) {
     }
     return lo;
   };
-  const result = search(lo, hi);
+
+  const check = (hrsPerDay) => {
+    let sum = 0;
+    let spentDays = 0;
+
+    for (let i = 0; i < n; i++) {
+      sum += arr[i];
+
+      if (sum > hrsPerDay) {
+        sum = arr[i];
+        spentDays++;
+      } else if (sum === hrsPerDay) {
+        sum = 0;
+        spentDays++;
+      }
+    }
+
+    if (sum > 0) {
+      spentDays++;
+    }
+    return spentDays <= days;
+  };
+
+  const result = BS(lo, hi);
   console.log(result);
 }
-
-const check = (arr, hrsPerDay, days) => {
-  let sum = 0;
-  let spent_days = 0;
-
-  for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
-
-    if (sum > hrsPerDay) {
-      sum = arr[i];
-      spent_days++;
-    } else if (sum === hrsPerDay) {
-      sum = 0;
-      spent_days++;
-    }
-  }
-
-  if (sum > 0) {
-    spent_days++;
-  }
-
-  return spent_days <= days;
-};
 
 runProgram("5 1\n1 8 2 1 3");
