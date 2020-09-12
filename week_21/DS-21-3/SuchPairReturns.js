@@ -64,3 +64,41 @@ function runProgram(input) {
 }
 
 runProgram("5 11\n3 4 0 2 7");
+
+// Binary Search (NlogN);
+
+// O(NLogN)
+function runProgram(input) {
+  input = input.trim().split("\n");
+
+  let [n, k] = input[0].trim().split(" ").map(Number);
+  // console.log("n, k", n, k);
+
+  let arr = input[1]
+    .trim()
+    .split(" ")
+    .map(Number)
+    .sort((a, b) => a - b);
+  // console.log("arr", arr);
+
+  for (let i = 0; i < n; i++) {
+    let val = k - arr[i];
+    if (BS(arr, i + 1, n - 1, val)) {
+      console.log(1);
+      return;
+    }
+  }
+  console.log(-1);
+}
+
+const BS = (a, lo, hi, val) => {
+  while (lo <= hi) {
+    let mid = lo + Math.floor((hi - lo) / 2);
+
+    if (a[mid] === val) return true;
+    else if (a[mid] < val) lo = mid + 1;
+    else hi = mid - 1;
+  }
+
+  return false;
+};
