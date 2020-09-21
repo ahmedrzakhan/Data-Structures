@@ -57,18 +57,17 @@
 // In the second test case, there is just one city. As a result of this there is no jump.
 
 // So, the output is 0 * 5 = 0.
-
+// TC - O(N)
 function runProgram(input) {
   input = input.trim().split("\n");
 
-  let tcs = Number(input[0].trim());
+  let tcs = Number(input[0]);
   //   console.log("tcs", tcs);
 
   let line = 1;
   for (let i = 1; i <= tcs; i++) {
     let [n, Q] = input[line++].trim().split(" ").map(Number);
     // console.log("n, Q", n, Q);
-
     let arr = input[line++]
       .trim()
       .split(" ")
@@ -76,21 +75,20 @@ function runProgram(input) {
       .sort((a, b) => a - b);
     // console.log("arr", arr);
 
-    const result = check(arr, n, Q);
+    const result = getCost(arr, n, Q);
     console.log(result);
   }
 }
 
-const check = (a, n, Q) => {
+const getCost = (arr, n, Q) => {
   let sum = 0;
-  for (let i = 0; i < n - 1; i++) {
-    let val = Q * Math.abs(a[i] - a[i + 1]);
-    console.log("val", val);
-    sum = sum + val;
+
+  for (let i = 1; i < n; i++) {
+    sum += Q * (arr[i] - arr[i - 1]);
   }
 
   return sum;
 };
 
-// runProgram("2\n2 4\n1 2\n1 5\n3");
+runProgram("2\n2 4\n2 1\n1 5\n3");
 runProgram("1\n2 5\n10 300000");

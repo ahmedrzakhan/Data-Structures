@@ -54,4 +54,22 @@ function runProgram(input) {
   console.log(result);
 }
 
+// 2nd Approach
+function runProgram(input) {
+  let n = Number(input.trim());
+  // console.log("n", n);
+
+  let result = n;
+
+  while (n !== 1) {
+    if (n % 2 === 0) {
+      n = n / 2;
+    } else {
+      n = n * 3 + 1;
+    }
+    result = result + " " + n;
+  }
+  console.log(result);
+}
+
 runProgram("3");
