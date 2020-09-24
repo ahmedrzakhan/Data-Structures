@@ -32,6 +32,8 @@ function runProgram(input) {
   let arr = input[1].trim().split(" ").map(Number);
   // console.log("arr", arr);
 
+  // if K is gretaer than N
+  k = k % n;
   for (let i = 0; i < k; i++) {
     let ele = arr.shift();
     arr.push(ele);
@@ -60,6 +62,49 @@ function runProgram(input) {
   // console.log(secondSlice);
 
   console.log(firstSlice.concat(secondSlice).join(" "));
+}
+
+// TC- O(N * K)
+function runProgram(input) {
+  input = input.trim().split("\n");
+
+  let [n, k] = input[0].trim().split(" ").map(Number);
+  // console.log("n, k", n, k);
+
+  let arr = input[1].trim().split(" ").map(Number);
+  // console.log("arr", arr);
+
+  k = k % n;
+  for (let i = 0; i < k; i++) {
+    rotate(arr, n);
+  }
+  console.log(arr.join(" "));
+}
+
+const rotate = (arr, n) => {
+  for (let i = 0; i < n - 1; i++) {
+    let temp = arr[i];
+    arr[i] = arr[i + 1];
+    arr[i + 1] = temp;
+  }
+};
+
+// TC- O(N)
+function runProgram(input) {
+  input = input.trim().split("\n");
+
+  let [n, k] = input[0].trim().split(" ").map(Number);
+  // console.log("n, k", n, k);
+
+  let arr = input[1].trim().split(" ").map(Number);
+  // console.log("arr", arr);
+
+  k = k % n;
+  let temp = [];
+  for (let i = 0; i < n; i++) {
+    temp[i] = arr[((k % n) + i) % n];
+  }
+  console.log(temp.join(" "));
 }
 
 runProgram("6 4\n1 2 5 4 0 6");
