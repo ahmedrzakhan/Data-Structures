@@ -1,4 +1,4 @@
-// You will be given an n by n matrix. You'll have to reverse the elements of each row of 
+// You will be given an n by n matrix. You'll have to reverse the elements of each row of
 // the matrix
 
 // Input Format
@@ -53,4 +53,17 @@ function processData(input) {
   }
   // console.log(a);
   console.log(a.join("\n"));
+}
+
+// TC (O(N))
+function runProgram(input) {
+  input = input.trim().split("\n");
+
+  input.shift();
+
+  let matrix = input
+    .map((ele) => ele.split(" ").map(Number))
+    .map((ele) => ele.reverse().join(" "))
+    .join("\n");
+  console.log(matrix);
 }

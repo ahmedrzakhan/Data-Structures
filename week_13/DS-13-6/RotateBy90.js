@@ -76,3 +76,24 @@ function processData(input) {
 
   console.log(matrix.map((a) => a.join(" ")).join("\n"));
 }
+
+// Another Approach
+
+// TC (O(N))
+function runProgram(input) {
+  input = input.trim().split("\n");
+
+  let n = Number(input[0]);
+
+  input.shift();
+
+  let matrix = input.map((ele) => ele.split(" ").map(Number));
+  //   console.log(matrix);
+
+  for (let i = n - 1; i >= 0; i--) {
+    let col = getCols(matrix, i);
+    console.log(col.join(" "));
+  }
+}
+
+const getCols = (mat, i) => mat.map((ele) => ele[i]);
