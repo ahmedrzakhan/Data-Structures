@@ -1,3 +1,55 @@
+// Infix Postfix
+// Description
+
+// Infix Expression- Operators are written in-between their operands. This is the 
+// usual way we write expressions.
+
+// Example- a+b-c
+
+// Postfix Expression- If the operator appears in the expression after the operands.
+
+// Example- Postfix of the above expression would be ab+c-
+
+// The compiler scans the expression either from left to right or from right to left.
+
+// Consider the below expression: a + b * c + d
+
+// The compiler first scans the expression to evaluate the expression b * c, then again
+//  scan the expression to add a to it. The result is then added to d after another scan.
+
+// The repeated scanning makes it very in-efficient. It is better to convert the expression 
+// to postfix(or prefix) form before evaluation.
+
+// The postfix expression of this would be- abc*+d+
+
+// This expression is much easy to evaluate than its infix counterpart.
+
+// **Remember** Brackets too can be used in the input and postfix notation doesn't have brackets.
+
+// You can refer tothislink for understanding in case you tried but could not achieve
+
+
+// Input
+// Input Format
+
+// One line which contains the infix expression
+
+// Constraints
+
+// Number of the operands<=26
+
+
+// Output
+// One line which contains the postfix expression
+
+
+// Sample Input 1 
+
+// a+b-c+d*(e-f)/g+(h*(i/j))
+// Sample Output 1
+
+// ab+c-def-*g/+hij/*+
+
 function runProgram(input) {
   let arr = input.trim().split("");
 //   console.log(arr);
