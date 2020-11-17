@@ -1,3 +1,34 @@
+// Is Even Sum Possible?
+// Description
+
+// Given an array a which contains n integers in it. Find out if there exists a
+//  subset of the array such that the sum of its elements is even.
+
+// Input
+// The first line of the input contains one integer t (1 ≤ t ≤ 10) — the number
+//  of test cases. Then t test cases follow.
+
+// The first line of each test case contains a single integer n (1 ≤ n ≤ 100000) 
+// — the length of the array a.
+
+// The second line contains n integers a1,a2,…,an (1 ≤ ai ≤ 10000), elements of the array a.
+
+// Output
+// For each test case, print the answer: "Yes" if possible or else "No" if not possible
+//  (without quotes).
+
+// Sample Input 1 
+
+// 2
+// 1
+// 5
+// 4
+// 1 2 3 4
+// Sample Output 1
+
+// No
+// Yes
+
 // TC_O(N) SC_O(1)
 function runProgram(input) {
   input = input.trim().split("\n");
