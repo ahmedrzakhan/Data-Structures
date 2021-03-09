@@ -10,21 +10,44 @@ function runProgram(input) {
     // console.log("arr", arr);
 
     let result = getProduct(arr, n);
-    console.log(result);
+    console.log(...result);
   }
 }
 
+// const getProduct = (a, n) => {
+//   let result = "";
+//   for (let i = 0; i < n; i++) {
+//     let prod = 1;
+//     for (let j = 0; j < n; j++) {
+//       if (i !== j) {
+//         prod *= a[j];
+//       }
+//     }
+//     result += prod + " ";
+//   }
+//   return result;
+// };
+
 const getProduct = (a, n) => {
-  let result = "";
-  for (let i = 0; i < n; i++) {
-    let prod = 1;
-    for (let j = 0; j < n; j++) {
-      if (i !== j) {
-        prod *= a[j];
-      }
-    }
-    result += prod + " ";
+  const L = [],
+    R = [],
+    result = [];
+  (L[0] = 1), (R[n - 1] = 1);
+
+  for (let i = 1; i < n; i++) {
+    L[i] = a[i - 1] * L[i - 1];
   }
+  // console.log("L", L);
+
+  for (let i = n - 2; i >= 0; i--) {
+    R[i] = a[i + 1] * R[i + 1];
+  }
+  // console.log("R", R);
+
+  for (let i = 0; i < n; i++) {
+    result[i] = L[i] * R[i];
+  }
+
   return result;
 };
 
